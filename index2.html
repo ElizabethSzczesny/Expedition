@@ -4,9 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/run8ajx.css">
+
+    <title>The Expedition: An Interactive Story for Children</title>
 </head>
 <body>
-    <p>test 2</p>
+    <div class="grid-container">
+      <div class="column" id="element-4">
+        <img src="images/HTC_Heritage Library_AcornAndOak 02Element 1.png">
+      </div>
+      <div id="droptarget"></div>
+      <div class="column" id="element-5">
+        <img src="images/HTC_Heritage Library_AcornAndOak 02Element 3.png">
+      </div>
+      <div class="column" id="element-6">
+        <img src="images/HTC_Heritage Library_Forest Animals 05Element 6.png">
+      </div>
+      <div class="column" id="para-page-two">
+        <p>You hear the rustling of leaves, a chipmunk is <span class="append">collecting</span><span draggable="true" id="dragtarget"> acorns</span>!
+        </p>
+      </div>
+    </div>
+
+    <div>
+      <p class="directions">To move to the next page drag the page’s <span class="brown">highlighted</span> word onto the image 
+        where the word is portrayed.
+      </p>
+      <p class="pagenum">2</p>
+    </div>
+    
+    <footer class="footer"><a target="_blank" href="https://www.heritagetype.com/pages/free-vintage-illustrations" class="footer">Artwork The Heritage Library</a><a class="footer" target="_blank" href="images/License_HeritageLibrary.pdf">Heritage Library License</a></footer>
+
+<script src="script.js"></script>
 </body>
 </html>
