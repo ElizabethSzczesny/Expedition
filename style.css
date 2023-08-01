@@ -68,8 +68,6 @@ a{
 
 #droptarget {
   border: 3px solid brown;
-  grid-column: 2/4;
-  grid-row: 11/12;
   width: 180px;
   height: 80px;
   line-height: 67px;
@@ -78,6 +76,11 @@ a{
   visibility: hidden;
   text-align: center;
   align-self: self-start;
+}
+
+.droptarget-one{
+  grid-column: 2/4;
+  grid-row: 11/12;
 }
 
 #element-1{
@@ -113,6 +116,11 @@ a{
 }
 
 /*Page Two Elements Placed on Grid*/
+
+.droptarget-two{
+  grid-column: 2/4;
+  grid-row: 11/12;
+}
 
 #element-4{
   grid-column: 1/5;
@@ -171,18 +179,9 @@ a{
   place-items: center;
 }
 
-#droptarget-three{
-  border: 3px solid brown;
+.droptarget-three{
   grid-column: 5/7;
   grid-row: 8/10;
-  width: 180px;
-  height: 80px;
-  line-height: 67px;
-  z-index:20;
-  background-color: white;
-  text-align: center;
-  align-self: self-start;
-  visibility: hidden;
 }
 
 /*Page 4 Elements Placed on Grid*/
@@ -239,18 +238,9 @@ a{
   z-index: 10;
 }
 
-#droptarget-four{
-  border: 3px solid brown;
+.droptarget-four{
   grid-column: 3/5;
   grid-row: 5/6;
-  width: 180px;
-  height: 80px;
-  line-height: 67px;
-  z-index:20;
-  background-color: white;
-  text-align: center;
-  align-self: self-end;
-  visibility: hidden;
 }
 
 /*Directions and Footer*/

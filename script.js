@@ -3,25 +3,34 @@ const drop = document.getElementById("droptarget");
 
 var append = document.querySelectorAll('.append');
 
-console.log("Hello World");
+console.log(window.location);
 
 var counter = 0;
 
-//put all your id's into their own array manually and then loop through that
+//Because each page has to completely re-load for each index_.html variables can't be initialized 
+//on one global page since we are not using loops at all here
 
-/*drag.addEventListener("mouseover", function(){
-    if(counter == 0){
-        var clone = drag.cloneNode(true);
-        append[0].appendChild(clone);
-        counter += 1
-    }
-    var node = document.createTextNode('move to match the word pine cone with the image of a pine cone');
-    append[0].appendChild(node);
-    }
-)*/
+if (window.location.href == "file:///Applications/MAMP/htdocs/Harvard%20CS50/Final%20Project/index.html"){
+  var i = 0;
+  var pagenumber = 2;
+}
+
+if (window.location.href == "file:///Applications/MAMP/htdocs/Harvard%20CS50/Final%20Project/index2.html"){
+  var i = 1;
+  var pagenumber = 3;
+}
+
+if (window.location.href == "file:///Applications/MAMP/htdocs/Harvard%20CS50/Final%20Project/index3.html"){
+  var i = 2;
+  var pagenumber = 4;
+}
+
+if (window.location.href == "file:///Applications/MAMP/htdocs/Harvard%20CS50/Final%20Project/index4.html"){
+  var i = 3;
+  var pagenumber = 5;
+}
 
 //Make the DIV element draggagle:
-
 
 /* Events fired on the drag target */
 
@@ -43,7 +52,6 @@ drop.addEventListener("dragover", function(event) {
   //event.target.style.border = "4px dotted brown";
 });
 
-var pagenumber = 1;
 
 drop.addEventListener("drop", function(event) {
   event.preventDefault();
@@ -52,93 +60,51 @@ drop.addEventListener("drop", function(event) {
   //document.getElementById("demo").innerHTML = "The text was dropped.";
   drop.style.visibility = "visible";
 
+  //so it doesn't keep appending more than once
   if(counter == 0){
     var clone = drag.cloneNode(true);
     append[0].appendChild(clone);
     console.log(clone);
-    counter += 1
+    counter += 1;
   } 
 
-  /*setTimeout(turnPage, 5000);
-  pagenumber +=1
-  if (pagenumber == 5){
-    pagenumber = null;
-  }*/
+  setTimeout(turnPage, 4000);
 });
 
 function turnPage(){
-  window.location = "index" + pagenumber + ".html";
+  if (pagenumber == 5){
+    pagenumber = null;
+  }
+  if(window.location.href == "file:///Applications/MAMP/htdocs/Harvard%20CS50/Final%20Project/index4.html"){
+      window.location = "index.html";
+  } else {
+    window.location = "index" + pagenumber + ".html";
+  }
 }
 
-/*function getVoices() {
-  let voices = speechSynthesis.getVoices();
-  if(!voices.length){
-    let utterance = new SpeechSynthesisUtterance("");
-    speechSynthesis.speak(utterance);
-    voices = speechSynthesis.getVoices();
-  }
-  return voices;
-}*/
 
-/*drop.addEventListener("drop", function() {
+//need an array of the words
 
-//Reading the book out loud
-const message = new SpeechSynthesisUtterance(); 
-
-// set the text to be spoken 
-message.text = "Hello World!"; 
-
-// create an instance of the speech synthesis object 
-const speechSynthesis = window.speechSynthesis; 
-
-const voices = getVoices();
-message.voice = voices[42];
-message.rate = 0.6;
-
-// start speaking 
-speechSynthesis.speak(message)
-});*/
-
-//const voices = window.speechSynthesis.getVoices();
-//console.log(voices);
-
-//voices.SpeechSynthesisVoice[42];
-
-/*function getVoices() {
-  let voices = window.speechSynthesis.getVoices();
-  if(!voices.length){
-    // some time the voice will not be initialized so we can call spaek with empty string
-    // this will initialize the voices 
-    let utterance = new SpeechSynthesisUtterance("");
-    speechSynthesis.speak(utterance);
-    voices = window.speechSynthesis.getVoices();
-    console.log(voices);
-  }
-  console.log(voices);
-  return voices;
-}*/
+const words = ["pine cones", "acorns", "fox", "deer"];
 
 const speech = window.speechSynthesis;
 if(speech.onvoiceschanged !== undefined)
 {
-
 	speech.onvoiceschanged = () => populateVoiceList();
-
 }
+
 function populateVoiceList()
 {
 	const voices = speech.getVoices(); // now should have an array of all voices
   console.log(voices);
 }
 
-
-
-/*drop.addEventListener("drop", function() {
+drop.addEventListener("drop", function() {
 
 function getVoices() {
   let voices = speechSynthesis.getVoices();
   if(!voices.length){
-    // some time the voice will not be initialized so we can call speakk with an empty string
+    // some time the voice will not be initialized so we can call speak with an empty string
     // this will initialize the voices 
     let utterance = new SpeechSynthesisUtterance("");
     speechSynthesis.speak(utterance);
@@ -147,7 +113,6 @@ function getVoices() {
   }
   return voices;
 }
-
 
 function speak(text, voice, rate, pitch, volume) {
   // create a SpeechSynthesisUtterance to configure the how text to be spoken 
@@ -163,24 +128,18 @@ function speak(text, voice, rate, pitch, volume) {
   speechSynthesis.speak(speakData);
 }
 
-
 if ('speechSynthesis' in window) {
 
   let voice = getVoices();
-  let rate = 1, pitch = 0, volume = 1;
-  let text = "Pine cone";
+  let rate = 0.4, pitch = 2, volume = 1;
+  let text = words[i];
 
-  speak(text, voice[2], rate, pitch, volume);
+  speak(text, voice[42], rate, pitch, volume);
 
-  /*setTimeout(()=>{ // speak after 2 seconds 
-    rate = 0.5; pitch = 1.5, volume = 0.5;
-    text = " Speaking with volume = 0.5 rate = 0.5 pitch = 1.5 ";
-    speak(text, voices[10], rate, pitch, volume );
-  }, 2000);
   console.log(voice.length)
 }else{
-  console.log(' Speech Synthesis Not Supported '); 
+  console.log('Speech Synthesis Not Supported'); 
 }
 
-});*/
+});
 

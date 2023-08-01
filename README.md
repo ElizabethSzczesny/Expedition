@@ -1,3 +1,3 @@
-#The Expedition
+The Expedition
 
 An Interactive Story for Children
