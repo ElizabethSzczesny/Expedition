@@ -10,22 +10,22 @@ var counter = 0;
 //Because each page has to completely re-load for each index_.html variables can't be initialized 
 //on one global page since we are not using loops at all here
 
-if (window.location.href == "file:///Applications/MAMP/htdocs/Harvard%20CS50/Final%20Project/index.html"){
+if (window.location.href == "https://elizabethszczesny.github.io/Expedition/index.html"){
   var i = 0;
   var pagenumber = 2;
 }
 
-if (window.location.href == "file:///Applications/MAMP/htdocs/Harvard%20CS50/Final%20Project/index2.html"){
+if (window.location.href == "https://elizabethszczesny.github.io/Expedition/index2.html"){
   var i = 1;
   var pagenumber = 3;
 }
 
-if (window.location.href == "file:///Applications/MAMP/htdocs/Harvard%20CS50/Final%20Project/index3.html"){
+if (window.location.href == "https://elizabethszczesny.github.io/Expedition/index3.html"){
   var i = 2;
   var pagenumber = 4;
 }
 
-if (window.location.href == "file:///Applications/MAMP/htdocs/Harvard%20CS50/Final%20Project/index4.html"){
+if (window.location.href == "https://elizabethszczesny.github.io/Expedition/index4.html"){
   var i = 3;
   var pagenumber = 5;
 }
@@ -75,7 +75,7 @@ function turnPage(){
   if (pagenumber == 5){
     pagenumber = null;
   }
-  if(window.location.href == "file:///Applications/MAMP/htdocs/Harvard%20CS50/Final%20Project/index4.html"){
+  if(window.location.href == "https://elizabethszczesny.github.io/Expedition/index4.html"){
       window.location = "index.html";
   } else {
     window.location = "index" + pagenumber + ".html";
