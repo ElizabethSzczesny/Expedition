@@ -1,5 +1,5 @@
 # THE EXPEDITION An Interactive Story for Children
-#### Video Demo:  <URL HERE>
+#### Video Demo:  https://youtu.be/OOAsGlevHm8
 #### Description:
 
 This project was created to be an interactive, engaging reading experience for young learners. Effectively creating the experience of having a book being read to them, with additional learning reinforcement.
