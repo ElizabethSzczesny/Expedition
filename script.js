@@ -6,7 +6,7 @@ var append = document.querySelectorAll('.append');
 console.log(window.location);
 
 var counter = 0;
-
+//NEW
 //Because each page has to completely re-load for each index_.html variables can't be initialized 
 //on one global page since we are not using loops at all here
 
