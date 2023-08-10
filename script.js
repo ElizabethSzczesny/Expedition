@@ -76,9 +76,9 @@ function turnPage(){
     pagenumber = null;
   }
   if(window.location.href == "https://elizabethszczesny.github.io/Expedition/index4.html"){
-      window.location = "index.html";
+      window.location.hrf = "https://elizabethszczesny.github.io/Expedition/";
   } else {
-    window.location = "index" + pagenumber + ".html";
+    window.location.href = "https://elizabethszczesny.github.io/Expedition/index" + pagenumber + ".html";
   }
 }
 
