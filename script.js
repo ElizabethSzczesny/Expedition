@@ -10,7 +10,7 @@ var counter = 0;
 //Because each page has to completely re-load for each index_.html variables can't be initialized 
 //on one global page since we are not using loops at all here
 
-if (window.location.href == "https://elizabethszczesny.github.io/Expedition/index.html"){
+if (window.location.href == "https://elizabethszczesny.github.io/Expedition/"){
   var i = 0;
   var pagenumber = 2;
 }
