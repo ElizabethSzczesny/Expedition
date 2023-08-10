@@ -1,13 +1,10 @@
-from flask import Flask, flash, redirect, render_template, request, session
-from flask_session import Session
-
-
+from cs50 import *
 import math
 import string
 import curses
 
 # Configure application
-app = Flask(__name__)
+#app = Flask(__name__)
 
 
 def main():
