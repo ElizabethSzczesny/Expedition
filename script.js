@@ -72,11 +72,11 @@ drop.addEventListener("drop", function(event) {
 });
 
 function turnPage(){
-  if (pagenumber == 5){
+  /*if (pagenumber == 5){
     pagenumber = null;
-  }
+  }*/
   if(window.location.href == "https://elizabethszczesny.github.io/Expedition/index4.html"){
-      window.location.hrf = "https://elizabethszczesny.github.io/Expedition/";
+      window.location.href = "https://elizabethszczesny.github.io/Expedition/";
   } else {
     window.location.href = "https://elizabethszczesny.github.io/Expedition/index" + pagenumber + ".html";
   }
